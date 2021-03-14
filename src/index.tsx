@@ -34,7 +34,7 @@ export type GaltonBoardType = ({
 }) => JSX.Element
 
 const GaltonBoard: GaltonBoardType = ({
-  particleBouncyness = 0.6,
+  particleBouncyness = 0.3,
   ballCount = 1500,
   ballSize = 2,
   pegSize = 2,
@@ -87,7 +87,6 @@ const GaltonBoard: GaltonBoardType = ({
     const peg = (x: number, y: number) =>
       Bodies.circle(x, y, pegSize, {
         isStatic: true,
-        restitution: particleBouncyness,
         render: {
           fillStyle: PEG_COLOR,
         },

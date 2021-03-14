@@ -6,7 +6,7 @@ const PEG_COLOR = '#666666';
 var Example = Example || {};
 
 Example.galtonBoard = function ({
-  particleBouncyness = 0.6,
+  particleBouncyness = 0.3,
   ballCount = 1500,
   ballSize = 2,
   pegSize = 2,
@@ -60,7 +60,6 @@ Example.galtonBoard = function ({
   const peg = (x, y) =>
     Bodies.circle(x, y, pegSize, {
       isStatic: true,
-      restitution: particleBouncyness,
       render: {
         fillStyle: PEG_COLOR,
       },
