@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import Matter from 'matter-js';
-import { sample } from 'lodash-es';
 
 const WIDTH = 300;
 const HEIGHT = 550;
@@ -18,7 +17,12 @@ const colors = [
   '#4cd964',
 ];
 
-const color = sample(colors);
+function sample(array: string[]) {
+  const length = array == null ? 0 : array.length
+  return length ? array[Math.floor(Math.random() * length)] : undefined
+}
+
+const color = sample(colors) ?? 'yellow';
 
 export type GaltonBoardType = ({
   particleBouncyness,
