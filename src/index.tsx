@@ -21,16 +21,23 @@ const colors = [
 
 const color = sample(colors);
 
-const GaltonBoard = ({
-  particleBouncyness = 0.6,
-  ballCount = 1500,
-  ballSize = 2,
-  pegSize = 2,
+export type GaltonBoardType = ({
+  particleBouncyness,
+  ballCount,
+  ballSize,
+  pegSize,
 }: {
   particleBouncyness: number;
   ballCount: number;
   ballSize: number;
   pegSize: number;
+}) => JSX.Element
+
+const GaltonBoard: GaltonBoardType = ({
+  particleBouncyness = 0.6,
+  ballCount = 1500,
+  ballSize = 2,
+  pegSize = 2,
 }) => {
   const boxRef = useRef(null);
   const canvasRef = useRef(null);
