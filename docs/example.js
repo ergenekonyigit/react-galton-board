@@ -1,5 +1,5 @@
 const WIDTH = 300;
-const HEIGHT = 500;
+const HEIGHT = 550;
 const WALL_COLOR = '#555555';
 const PEG_COLOR = '#666666';
 
@@ -9,7 +9,7 @@ Example.galtonBoard = function ({
   particleBouncyness = 0.3,
   ballCount = 1500,
   ballSize = 2,
-  pegSize = 2,
+  pegSize = 1,
 }) {
   var Engine = Matter.Engine,
     Render = Matter.Render,
@@ -34,8 +34,8 @@ Example.galtonBoard = function ({
     element: document.body,
     engine: engine,
     options: {
-      width: 800,
-      height: 600,
+      width: WIDTH,
+      height: HEIGHT,
       showAngleIndicator: true,
     },
   });
@@ -121,7 +121,7 @@ Example.galtonBoard = function ({
   // divider walls
   for (let x = 20; x <= 280; x += 10) {
     if (x !== 0) {
-      let divider = wall(x, 394, 2, 220);
+      let divider = wall(x, 415, 2, 260);
       World.add(engine.world, divider);
     }
   }
@@ -129,7 +129,7 @@ Example.galtonBoard = function ({
   const rand = (min, max) => Math.random() * (max - min) + min;
 
   const dropBall = () => {
-    let droppedBall = ball(150 + rand(-5, 5), 15);
+    let droppedBall = ball(150 + rand(-1, 1), 15);
 
     Body.setVelocity(droppedBall, {
       x: rand(-0.05, 0.05),
@@ -174,7 +174,7 @@ Example.galtonBoard = function ({
   // fit the render viewport to the scene
   Render.lookAt(render, {
     min: { x: 0, y: 0 },
-    max: { x: 800, y: 600 },
+    max: { x: WIDTH, y: HEIGHT },
   });
 
   // context for MatterTools.Demo
