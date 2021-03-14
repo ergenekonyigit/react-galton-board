@@ -5,8 +5,8 @@ import { sample } from 'lodash-es';
 const WIDTH = 300;
 const HEIGHT = 550;
 const BACKGROUND_COLOR = '#000000';
-const WALL_COLOR = '#222222';
-const PEG_COLOR = '#333333';
+const WALL_COLOR = '#333333';
+const PEG_COLOR = '#444444';
 
 const colors = [
   '#ff2d55',
