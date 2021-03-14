@@ -5,8 +5,7 @@ import { sample } from 'lodash-es';
 const WIDTH = 300;
 const HEIGHT = 550;
 const BACKGROUND_COLOR = '#000000';
-const WALL_COLOR = '#333333';
-const PEG_COLOR = '#444444';
+const FOREGROUND_COLOR = '#555555';
 
 const colors = [
   '#ff2d55',
@@ -88,7 +87,7 @@ const GaltonBoard: GaltonBoardType = ({
       Bodies.circle(x, y, pegSize, {
         isStatic: true,
         render: {
-          fillStyle: PEG_COLOR,
+          fillStyle: FOREGROUND_COLOR,
         },
       });
 
@@ -96,7 +95,7 @@ const GaltonBoard: GaltonBoardType = ({
       Bodies.rectangle(x, y, width, height, {
         isStatic: true,
         render: {
-          fillStyle: WALL_COLOR,
+          fillStyle: FOREGROUND_COLOR,
         },
       });
 
@@ -111,7 +110,7 @@ const GaltonBoard: GaltonBoardType = ({
         isStatic: true,
         angle: angle,
         render: {
-          fillStyle: WALL_COLOR,
+          fillStyle: FOREGROUND_COLOR,
         },
       });
 
@@ -154,7 +153,7 @@ const GaltonBoard: GaltonBoardType = ({
     // divider walls
     for (let x = 20; x <= 280; x += 10) {
       if (x !== 0) {
-        let divider = wall(x, 415, 2, 260);
+        let divider = wall(x, 415, 1, 260);
         World.add(engine.world, divider);
       }
     }
